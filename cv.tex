@@ -1,0 +1,35 @@
+\input{parts/head}
+
+\def\version{cv_version}
+
+%###################
+
+\titleformat{\subsection}[block]{}{}{1em}
+{
+    \vspace{-1.3cm}
+    \begin{flushleft}
+    \begin{minipage}{\linewidth}
+    \HRule{\linewidth}{0.2mm}\\[5pt]
+    \centering
+    \bf
+}
+[
+    \HRule{\linewidth}{0.2mm}
+    \end{minipage}
+    \end{flushleft}
+]
+\titleformat{\section}[block]{\Large \sc}{}{0em}{\centering}
+\titleformat{\subsubsection}{\bf}{}{0em}{$\bullet$\quad}   
+
+\begin{document}
+
+\renewcommand{\tabcolsep}{0.1cm}
+\renewcommand{\arraystretch}{1}
+
+\definecolor{color0}{rgb}{0,0,0}% black
+\definecolor{color1}{rgb}{0.22,0.45,0.70}% light blue
+\definecolor{color2}{rgb}{0.45,0.45,0.45}% dark grey
+
+\input{parts/cv}
+
+\end{document}

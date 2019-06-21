@@ -1,0 +1,122 @@
+\documentclass[a4paper,11pt]{article} % fonte 11 points, papier a4
+
+\usepackage[french,english]{babel}   
+\usepackage[T1]{fontenc}        
+\usepackage{url}                
+\usepackage[latin1]{inputenc}
+\usepackage{lmodern}
+\usepackage{setspace}
+\usepackage{textcomp}
+\usepackage{amsfonts}
+\usepackage[table,usenames,dvipsnames]{xcolor}
+\usepackage{graphicx}
+\usepackage{multirow}
+\usepackage{tikz}
+\usepackage{fancybox}
+\usepackage{colortbl}
+\usepackage[final]{pdfpages}
+\usepackage{multicol}
+\usepackage{enumitem}
+\usepackage{ifthen}
+\include{colors}
+\usepackage[backend=biber,style=ieee,sorting=ynt,defernumbers=true]{biblatex}
+\addbibresource{listPubli.bib}
+\usepackage[final]{pdfpages}
+\usepackage{csquotes}
+
+\usepackage[nomessages]{fp}
+
+\newcommand{\myname}{\textbf{M. L\'eonardon}}
+
+\usepackage{hyperref}
+\hypersetup{colorlinks,citecolor=Paired-1, filecolor=Paired-1,linkcolor=black,urlcolor=Paired-1}
+
+% La page
+%#########
+\usepackage{titlesec}
+\usepackage{vmargin}            % redefinir les marges
+\setmarginsrb{2cm}{2cm}{2cm}{1cm}{0cm}{0cm}{0cm}{1cm}
+    
+% Marge gauche, haute, droite, basse; espace entre la marge et le texte ?
+% gauche, en  haut, ? droite, en bas
+
+% Je redefinis le comportement des guillemets
+%#############################################
+\catcode`\?=\active
+\catcode`\?=\active
+\def?{\og\ignorespaces}
+\def?{{\fg}}
+
+% Diverses nouvelles commandes
+%#############################
+
+%%Cleardoublepage
+\makeatletter
+\renewcommand{\cleardoublepage}{
+\clearpage\thispagestyle{empty}
+\if@twoside
+\ifodd\c@page
+\else
+\hbox{}\newpage
+\fi
+\fi
+}
+\makeatother
+
+% Pour laisser de l'espace entre les lignes du tableau
+\newcommand\espace{\vrule height 20pt width 0pt}
+\newcommand{\HRule}[2]{{\centering\rule{#1}{#2}}}
+
+\definecolor{lightlightblue}{rgb}{0.75,0.85,1}
+\definecolor{lightlightgray}{rgb}{0.93,0.93,0.93}
+\definecolor{lightlightgray2}{rgb}{0.8,0.8,0.8}
+\definecolor{lightlightlightgray}{rgb}{0.98,0.98,0.98}
+
+
+\setlength{\arrayrulewidth}{0.4pt}
+
+\setcounter{tocdepth}{2}
+
+\titleformat{\subsection}[block]{}{}{1em}
+{
+    \vspace{-1.3cm}
+    \begin{flushleft}
+    \begin{minipage}{\linewidth}
+    \HRule{\linewidth}{0.2mm}\\[5pt]
+    \centering
+    \bf \thesubsection\quad
+}
+[
+    \HRule{\linewidth}{0.2mm}
+    \end{minipage}
+    \end{flushleft}
+]
+
+\titleformat{\section}[block]{\Large \sc}{\thesection}{1em}{\centering}
+
+\newcommand{\tabcv}[2]{
+\begin{minipage}[t]{0.12\linewidth}
+\textbf{\footnotesize #1}
+\end{minipage}\hfill
+\begin{minipage}[t]{0.85\linewidth}
+#2
+\end{minipage}
+\vspace{1em}
+}
+
+\renewcommand{\tabcolsep}{0.1cm}
+\renewcommand{\arraystretch}{1}
+
+\definecolor{color0}{rgb}{0,0,0}% black
+\definecolor{color1}{rgb}{0.22,0.45,0.70}% light blue
+\definecolor{color2}{rgb}{0.45,0.45,0.45}% dark grey
+
+\newcommand*{\namefont}{\fontsize{28}{30}\mdseries\upshape}
+\newcommand*{\titlefont}{\LARGE\mdseries\slshape}
+\newcommand*{\addressfont}{\small\mdseries\slshape}
+\newcommand*{\quotefont}{\large\slshape}
+
+\newcommand*{\namestyle}[1]{{\namefont\textcolor{color0}{#1}}}
+\newcommand*{\titlestyle}[1]{{\titlefont\textcolor{color2}{#1}}}
+\newcommand*{\addressstyle}[1]{{\addressfont\textcolor{color2}{#1}}}
+\newcommand*{\quotestyle}[1]{{\quotefont\textcolor{color1}{#1}}}

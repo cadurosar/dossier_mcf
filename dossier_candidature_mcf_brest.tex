@@ -1,0 +1,118 @@
+\input{parts/head}
+
+\begin{document}
+\vbox{
+\thispagestyle{empty}
+
+\begin{center}\large
+    %%%%%%%%%%%% Titre
+    \begin{minipage}{0.95\linewidth}\centering
+        \HRule{\linewidth}{0.5mm}\\
+        \vspace{0.5em}
+        \bf
+        \LARGE{Candidature au poste de}\\
+        \vspace{0.5em}
+        \LARGE{Maître de Conférences en électronique numérique}\\         
+        \vspace{0.5em}
+        \LARGE{IMT Atlantique}\\         
+        \HRule{\linewidth}{0.5mm}
+    \end{minipage}
+    %%%%%%%%%%%%
+    
+    \vspace{1cm}
+    
+    
+    \LARGE{\textbf{Candidat}}\\
+    \LARGE{\textsc{Mathieu Léonardon}}
+
+\end{center}
+}
+\vspace{1cm}
+
+\renewcommand{\contentsname}{Sommaire}
+\tableofcontents
+
+\newpage
+
+\section{Curriculum Vitae détaillé}
+\input{parts/cv}
+
+\input{parts/motivation_brest}
+
+\section{Lettres de recommandation}
+\vspace{1cm}
+\subsection{Coordonnées des contacts}
+\subsubsection{Co-Directeur de thèse}
+Christophe Jégo\\
+ENSEIRB-MATMECA\\
+1 Avenue du Dr Albert Schweitzer\\
+B.P. 99\\
+33402 Talence Cedex\\
+Tel: 06 51 14 07 80\\
+christophe.jego@enseirb-mameca.fr\\
+\subsubsection{Co-Directeur de thèse}
+Yvon Savaria\\
+Polytechnique Montréal\\
+P.O. Box 6079, Station Centre-Ville\\
+H3C 3A7, Montréal, QC.\\
+Canada\\
+Tel: (+01) 514 340 4711 \#4737\\
+yvon.savaria@polymtl.ca\\
+\subsubsection{Co-Encadrant de thèse}
+Camille Leroux\\
+ENSEIRB-MATMECA\\
+1 Avenue du Dr Albert Schweitzer\\
+B.P. 99\\
+33402 Talence Cedex\\
+Tel: 06 95 95 11 35\\
+camille.leroux@ims-bordeaux.fr\\
+\subsubsection{Maître d'apprentissage}
+Hervé Garat\\
+WorldCast Systems\\
+20 Avenue Neil Armstrong\\
+33700 Mérignac\\
+Tel: 05 56 67 42 83\\
+h.garat@worldcastsystems.com\\
+
+
+
+
+\includepdf[pages=1,pagecommand={\subsection{Lettre de recommandation - Yvon Savaria}\label{subsec:yvon}}   ,width=\paperwidth,  offset=80 -110, angle=1.6]{pieces/lettre_recommandation_yvon.pdf}
+\includepdf[pages=2,pagecommand={}   ,width=\paperwidth,  offset=80 -100, angle=1.8]{pieces/lettre_recommandation_yvon.pdf}
+\clearpage
+\includepdf[pages=-,pagecommand={\subsection{Lettre de recommandation - Christophe Jégo}},width=\textwidth,  offset=80 -100]{pieces/lettre_recommandation_christophe.pdf}
+\clearpage
+\includepdf[pages=-,pagecommand={\subsection{Lettre de recommandation - Camille Leroux}} ,width=\paperwidth, offset=80 -100]{pieces/lettre_recommandation_camille.pdf}
+\clearpage
+\includepdf[pages=-,pagecommand={\subsection{Lettre de recommandation - Hervé Garat}}    ,width=\textwidth,  offset=80 -100]{pieces/lettre_recommandation_herve.pdf}
+
+
+
+% Rapport de soutenance
+\includepdf[pages=1,pagecommand={\section{Rapports de thèse}\vspace{1cm}\subsection{Rapport de soutenance}},width=\textwidth, offset=80 -100]{pieces/rapport_soutenance.pdf}
+\includepdf[pages=2-,pagecommand={},width=\textwidth, offset=80 -40]{pieces/rapport_soutenance.pdf}
+
+% Rapport Amer
+\includepdf[pages=1,pagecommand={\subsection{Rapport - Amer Baghdadi}},width=\textwidth, offset=80 -100]{pieces/rapport_amer_baghdadi.pdf}
+\includepdf[pages=2-,pagecommand={},width=\textwidth, offset=80 -40]{pieces/rapport_amer_baghdadi.pdf}
+
+% Rapport Emmanuel
+\includepdf[pages=1,pagecommand={\subsection{Rapport - Emmanuel Casseau}},width=\textwidth, offset=80 -100]{pieces/rapport_emmanuel_casseau.pdf}
+\includepdf[pages=2-,pagecommand={},width=\textwidth, offset=80 -40]{pieces/rapport_emmanuel_casseau.pdf}
+
+\clearpage
+
+\input{parts/integration_brest}
+
+
+\includepdf[pages=1,pagecommand={\section{Articles}\vspace{1cm}\subsection{Fast and Flexible Software Polar List Decoders}},width=\paperwidth, offset=80 -160]{pieces/article_fast_list.pdf}
+\includepdf[pages=2-,pagecommand={},width=\paperwidth, offset=80 -80]{pieces/article_fast_list.pdf}
+
+\includepdf[pages=1,pagecommand={\subsection{Custom Low Power Processors for Polar Decoding}},width=\paperwidth, offset=80 -100]{pieces/article_custom.pdf}
+\includepdf[pages=2-,pagecommand={},width=\paperwidth, offset=80 -40]{pieces/article_custom.pdf}
+
+\includepdf[pages=1,pagecommand={\subsection{Transport Triggered Polar Decoders}},width=\paperwidth, offset=80 -135]{pieces/article_ttpd.pdf}
+\includepdf[pages=2-,pagecommand={},width=\paperwidth, offset=80 -40]{pieces/article_ttpd.pdf}
+
+
+\end{document}

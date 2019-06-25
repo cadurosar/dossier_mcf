@@ -1,10 +1,38 @@
 %!TEX root = ../resume.tex
 
+%*******************************************************************************
+%
+%                                    TOC   
+%
+%*******************************************************************************
+{\centering
+\vspace*{3cm}
 
+\titlestyle{Application for a Post Doc position}\\
+\vspace{0.5cm}
+\titlestyle{-}\\
+\vspace{0.5cm}
+\titlestyle{Tampere University of Technology}\\
+\vspace{5cm}
+\namestyle{Mathieu Léonardon} \\
+\vfill
+}
+\setcounter{tocdepth}{1}
+\tableofcontents
+\newpage
+
+%*******************************************************************************
+%
+%                                     CV           
+%
+%*******************************************************************************
+
+\section{CV}
 \begin{multicols}{2}\raggedright
 \namestyle{Mathieu Léonardon} \\
 \vspace{0.5cm}
 \titlestyle{Ph.D. in Electronics}\\
+\websitestyle{website: \href{http://mathieuleonardon.com}{mathieuleonardon.com}}\\
 \columnbreak
 
 \raggedleft
@@ -12,7 +40,6 @@
 14 rue Saint Denis \\
 33490 Saint Macaire, France \\
 e-mail: \url{mathieu.leonardon@gmail.com}\\
-website: \url{mathieuleonardon.com}\\
 phone: (+33)6 88 62 06 03\\
 32 y.o.
 }
@@ -46,12 +73,12 @@ phone: (+33)6 88 62 06 03\\
 
 \tabcv{2012 - 2015}{
 \textbf{Engineer Degree}, \textit{Bordeaux INP}, \textit{Talence}, \textit{France}\\[0.5em]
-{\footnotesize \textbf{$\bullet$ Field:} Embedded Electronics Systems (SEE)}, Apprenticeship
+{\footnotesize \textbf{$\bullet$} Embedded Electronics Systems (SEE), Apprenticeship}
 }
 
 \tabcv{2011 - 2012}{
 \textbf{University Diploma of Technology}, \textit{IUT Paul Sabatier}, \textit{Toulouse}, \textit{France}\\[0.5em]
-{\footnotesize\textbf{$\bullet$ Field:} Physical measures}}
+{\footnotesize\textbf{$\bullet$} Physical Measures}}
 
 \subsection{Professional Experience}
 
@@ -84,7 +111,16 @@ phone: (+33)6 88 62 06 03\\
 
 \end{flushleft}
 \newpage
-\subsection{Publications}
+
+
+%*******************************************************************************
+%
+%                                 PUBLICATIONS     
+%
+%*******************************************************************************
+
+
+\section{Publications}
 {
 \renewcommand{\refname}{\vspace{-2.5em}}
 
@@ -111,11 +147,16 @@ phone: (+33)6 88 62 06 03\\
 }
 
 \clearpage
-\subsection{Teaching}
 
-\input{parts/teachings}
 
-\subsection{Research}
+%*******************************************************************************
+%
+%                                    RESEARCH      
+%
+%*******************************************************************************
+
+
+\section{Research}
 \label{subsec:rech}
 These works have all been realized during my 3-years thesis.
 
@@ -151,11 +192,11 @@ The third contribution of my thesis work is also a processor architecture with i
 
 A suite of free development tools is available from Tampere University (\url{http://openasip.org/}). The latter allows to automate a large part of the design of such a processor and also offers a compiler that adapts to the specialized architecture. Thus, just like the previous ASIP, the decoding algorithm is described using a high-level language. The polar code decoder of TTA architecture realized was prototyped on FPGA and its synthesis was realized for an ASIC target in ST FD-SOI technology 28 nm \cite{Leonardon2018b}. The measured throughput are then higher than those obtained on general purpose processors. The energy consumption is reduced to about 0.1 nJ per decoded bit for a polar code (1024,512) with the successive cancellation decoding algorithm. This corresponds to a reduction of two orders of magnitude compared to the consumption measured on general purpose processors, and a reduction of one order of magnitude compared to ASIP using the Cadence / Tensilica tools.
 
-\subsubsection{Travaux sur le décodeur Sparse Code Multiple Access}
+\subsubsection{Studies on Sparse Code Multiple Access decoder}
 
 During my stay at Polytechnique Montréal, as part of my thesis work, I became interested in the implementation of a SCMA (Sparse Code Multiple Access) decoder. SCMA is a promising non-orthogonal multiple access technique for future communication standards. Alirezah Ghaffari proposed computational simplifications of the algorithm to accelerate decoding processing. In order to ensure the real performance of this simplification, we have integrated this SCMA decoder into a complete communication chain. It is also integrated into AFF3CT to make the source code available to the community and also to allow the results to be reproduced. This work is described in \cite{Ghaffari2017}. In a second step, we focused on accelerating the software implementation of these algorithms on general purpose processors, by using SIMD instruction sets \cite{ghaffari_2019}. The use of SIMD units in conjunction with the proposed simplifications allows significant gains in throughput and energy consumption, up to an order of magnitude.
 
-\subsubsection{Contribution au projet AFF3CT}
+\subsubsection{Contribution to the AFF3CT project}
 Since 2015, I have been contributing to the development of the AFF3CT project (\url{aff3ct.github.io}). This is a project that offers many software tools related to digital communications. Particular attention is paid to the throughput and latency performance of error-correcting code decoders. 
 
 Used as a simulator, it allows Monte Carlo simulations of the entire communication chain. The data are randomly generated, encoded, modulated, noisy, decoded, and the performance is estimated by measuring the Bit Error Rate (BER) and the Frame Error Rate (FER). The simulator's ambition is threefold: 
@@ -168,7 +209,22 @@ Used as a simulator, it allows Monte Carlo simulations of the entire communicati
 AFF3CT can also be used as a library. Thus, any developer can use the elementary bricks available. This possibility is widely used by our industrial partners (Airbus, Thales,...) to integrate AFF3CT blocks into their communication chains, whether for simulation or for real communicating systems (software radio).
 \clearpage
 
-\subsection{Responsabilités collectives}
+%*******************************************************************************
+%
+%                                  TEACHING
+%
+%*******************************************************************************
+
+\section{Teaching}
+\input{parts/teachings}
+
+%*******************************************************************************
+%
+%                               RESPONSABILITES AC.
+%
+%*******************************************************************************
+
+\section{Responsabilities}
 I have been an IEEE member since 2018 and I participate in the review of articles for various journals and conferences in the field of digital systems and signal processing.
 
 \subsubsection{Revue d'articles de journaux}

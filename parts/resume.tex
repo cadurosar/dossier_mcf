@@ -1,25 +1,5 @@
 %!TEX root = ../resume.tex
 
-%*******************************************************************************
-%
-%                                    TOC   
-%
-%*******************************************************************************
-{\centering
-\vspace*{3cm}
-
-\titlestyle{Application for a Post Doc position}\\
-\vspace{0.5cm}
-\titlestyle{-}\\
-\vspace{0.5cm}
-\titlestyle{Tampere University of Technology}\\
-\vspace{5cm}
-\namestyle{Mathieu Léonardon} \\
-\vfill
-}
-\setcounter{tocdepth}{1}
-\tableofcontents
-\newpage
 
 %*******************************************************************************
 %
@@ -109,8 +89,16 @@ phone: (+33)6 88 62 06 03\\
 }
 }
 
+%*******************************************************************************
+%
+%                                    TOC   
+%
+%*******************************************************************************
+\setcounter{tocdepth}{1}
+\tableofcontents
+
+
 \end{flushleft}
-\newpage
 
 \section{Areas of expertise}
 \vspace{1cm}
@@ -137,7 +125,7 @@ phone: (+33)6 88 62 06 03\\
 \end{itemize}
 \vspace{0.4cm}
 
-\subsection{Mastery of tools}
+\subsection{Tools}
 
 \begin{itemize}
 \item \textit{Operating systems}: Linux/Unix (preferred), Windows
@@ -206,7 +194,7 @@ This first contribution involved the definition of two distinct concepts: the ge
 The proposed decoder aims to be as generic and flexible as possible. The genericity and flexibility of the proposed decoder are superior to all state of the art implementations of list decoding algorithms, which are the algorithms with the best decoding performance.
 
 In addition, algorithmic and implementation improvements are proposed, allowing to increase the performance of bit rates and decoding latency. Despite increased genericity and flexibility, the decoding rates achieved are higher (up to a factor of 5) than those in the literature. A version of the decoders proposed was also ported to ARM. It uses the SIMD NEON instruction set. While lower throughput are achieved, it is shown that power consumption on ARM is reduced compared to implementations on x86 architecture processors.
-The decoders are all integrated into the AFF3CT software suite (\url{aff3ct.github.io}). The source code is therefore made available to the scientific community and the results are easily reproducible.
+The decoders are all integrated into the AFF3CT software suite (\url{https://aff3ct.github.io}). The source code is therefore made available to the scientific community and the results are easily reproducible.
 
 \subsubsection{ASIP decoder of polar codes: Customization of a processor}
 

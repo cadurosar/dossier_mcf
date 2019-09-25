@@ -1,5 +1,80 @@
+%!TEX root = ../dossier_candidature_mcf_brest.tex
 
 \section{Projets d'intégration en recherche et en enseignement}\vspace{1cm}
+
+\subsection{Projet d'intégration en recherche}\vspace{2em}
+
+La thématique de recherche proposée pour le poste à pourvoir est celle de l'adéquation entre algorithmes et architectures dans le domaine de l'électronique numérique. Les applications privilégiées seront des applications en intelligence artificielle embarquée. L'intelligence artificielle a aujourd'hui un impact fort sur la société. En effet, ses applications sont nombreuses. En médecine, des algorithmes d'apprentissage machine parviennent désormais à poser, en ce qui concerne certaines pathologies, de meilleurs diagnostics qu'un panel d'experts \cite{esteva2017dermatologist,hannun2019cardiologist}. Dans le domaine de l'automobile et plus généralement des véhicules autonomes [], les progrès sont fulgurants. Ils le sont également en ce qui concerne la reconnaissance d'images [], l'analyse de flux vidéos [], la traduction linguistique [], les jeux de société []. L'intelligence artificielle égale également l'homme dans des domaines qui lui semble pourtant propre comme l'art [], l'empathie [], les négociations commerciales[].
+
+En tout état de cause, il est difficile de définir quel est le plein potentiel des algorithmes d'intelligence artificielle. Ils concernent toutes les sociétés du monde. Il est donc capital que chacun puisse s'approprier ces outils : chercheurs, industriels, citoyens. Plusieurs problématiques sont à dégager.
+
+\begin{itemize}
+	\item Indépendance vis-à-vis de la quantité de calculs et des capacités de mémoires : un nombre très réduit d'acteurs détient aujourd'hui la plus grande partie de la puissance de calcul mondiale []. Cette puissance de calcul leur donne fatalement une avance considérable sur ses concurrents, mais aussi sur les états. Quel impact cet avantage peut-il avoir en terme de souveraineté des états ? Quelle place pourront occuper les entreprises concurrentes de tailles plus modeste ? Pour mitiger ce déséquilibre, une des voies possibles est la conception d'architectures hétérogènes et d'outils puissant pour les utiliser (Section \ref{subsubsec:archis_heterogenes}).
+	\item Indépendance vis-à-vis du matériel embarqué : les industriels doivent pouvoir concevoir leurs propres circuits numériques embarqués, pour s'assurer de la sécurité des données. des méthodologies efficaces de conception électronique peuvent contribuer à cette indépendance comme les méthodologies ASIP développées dans la Section \ref{subsubsec:asip_ia} de ce projet de recherche.
+	\item Indépendance vis-à-vis des méthodes : les entreprises doivent prendre par à la révolution de l'IA en s'appropriant ses méthodes. Cet apprentissage peut passer par des échanges entre chercheurs et industriels. Pour concrétiser ce genre d'échange, j'ai rédigé en partenariat avec l'entreprise WorldCast Systems un développement de projet CIFRE qui pourra servir de base à une future postulation pour un financement de l'ANRT. Ce projet porte sur l'utilisation d'algorithme d'apprentissage machine appliquée à la maintenance prédictive (Section \ref{sec:cifre}).
+\end{itemize}
+
+Enfin un dernier thème de recherche est proposé dans une dernière partie. Celui-ci fait le lien entre mes travaux de thèse et d'ATER et la thématique de l'intelligence articielle. Il s'agit d'utiliser un logiciel de simulation de chaînes de communications pour entraîner un constructeur de codes correcteurs d'erreurs. Ce thème est décrit en Section \ref{subsubsec:ia_fec}.
+
+% Ajouter des citations
+
+\subsubsection{Architectures hétérogènes}
+\label{subsubsec:archis_heterogenes}
+Aujourd'hui, les phases d'apprentissage des systèmes d'intelligence artificielles sont réalisées à l'aide d'unités de calculs graphiques (GPU : Graphical Processing Units). L'inconvénient des GPU est leur forte consommation énergétique. Cette consommation pose deux problèmes : celui des coûts financiers et celui de l'impact écologique []. Des alternatives sont d'ores et déjà proposées, avec par exemple le développement de puces TPU (Tensor Processing Unit) développées par l'entreprise Google, qui permettent un apprentissage plus rapide et une consommation réduite []. Le troisième type de cibles envisagées est le FPGA (Field Programmable Gate Array), dont le principal avantage est qu'il peut être reconfiguré pour s'adapter finement à l'algorithme que l'on souhaite lui faire exécuter. Ces améliorations fines peuvent permettre des réductions de consommation énergétique [].
+%TODO : introduire habilement les Xeon + FPGA
+La problématique est alors de transformer la description formelle d'un algorithme d'apprentissage en un programme s'exécutant sur le processeur et à l'architecture spécialisée synthétisée pour le FPGA. Pour réaliser ceci, la première nécessité est de former des ingénieurs pour qu'ils connaissent et sachent utiliser ces plate-formes hétérogènes. Ce sujet est au c\oe{}ur de la TAF SEH (Systèmes Embarqués Hétérogènes). Ensuite, des outils logiciels peuvent faciliter ce développement : 
+\begin{itemize}
+	\item Bibliothèques logicielles pour calcul parallèle (C++ STL[], SyCL[])
+	\item Langages et compilateurs pour cibles parallèles (OpenCL[], TCE[])
+	\item Langages (SystemC, System Verilog) et outils de synthèse matérielles haut niveau (Vivado HLS, Intel HLS Compiler)
+\end{itemize}
+
+Le développement de ces outils et leur applications sur les futurs algorithmes d'apprentissage permettront des améliorations majeures de l'efficacité énergétique et de la vitesse d'apprentissage. Mon parcours professionnel et universitaire au cours desquels j'ai développé une double compétence logicielle et matérielle me permettront de contribuer significativement au domaine.
+
+\subsubsection{ASIP pour l'IA}
+\label{subsubsec:asip_ia}
+
+
+
+\subsubsection{Algorithmes d'apprentissage pour la conception de codes correcteurs d'erreurs}
+\label{subsubsec:ia_fec}
+
+L'art de de la construction des codes correcteurs d'erreurs est un domaine de recherche actif depuis la proposition de la théorie de l'information de CLaude Shannon. Diverses familles ont été proposées, de plus en plus complexes. Sur le plan conceptuel, les outils mathématiques et d'analyse sont de plus en plus raffinés. Sur le plan calculatoire, les traitements à réaliser au niveau du décodage sont de plus en plus lourds. Cette complexité du décodage a suivi la croissance exponentielle de la puissance de calcul des circuits électroniques (loi de Moore).
+
+Aujourd'hui, la conception de ces codes correcteurs d'erreurs et des algorithmes de décodage qui leur sont associés est toujours le fruit du travail d'une communauté d'experts. Ils utilisent pour cela des outils mathématiques théoriques couplés à des expérimentations empiriques. Selon Alan Turing, les problèmes d'une telle complexité ne pourront, à terme, n'être résolu que par des machines (%TODO : affiner la pensée, citer []). Il est possible d'appréhender ce défi avec beaucoup d'angles différents. Voilà celui qui me parait le plus prometteur en l'état actuel des choses. Il correspond l'extension de l'idée présentée dans [AI Coding]. Ce principe est schématisé dans la figure BLAH.
+
+Fig.II. / AI coding
+
+La première étape est de partir d'une famille de code existante. Pour l'exemple, et parce qu'il s'agit des codes que je connais le mieux, je parlerai la famille des codes polaires. Des raisonnements analogues pourraient être menés pour n'importe quelle famille de codes correcteurs d'erreurs.
+La construction d'un code polaire (N,K), d'une taille N et codant K bits d'informations, peut être représentée par son vecteur de bits gelés Ak, dont K bits doivent être à 1 et les N-K restants à 0. Cette construction est la donnée de sortie du "Constructeur" de la figure 1. Cette construction étant connue, il est possible de générer un encodeur et un décodeur de codes polaires, et de simuler ses performances, par exemple à l'aide d'une simulation de type Monte Carlo. Le résultat de cette évaluation (performance measure) est le taux d'erreur trame simulé.
+
+Le principe est alors de réaliser (constructeur) un système d'apprentissage automatique qui doit améliorer les performances du code. Une telle démarche est proposée dans [].
+
+Ce type d'approche me parait très prometteur. Il s'agit en effet de prendre un problème ayant un très grand nombre de dimensions (N, K, position des bits gelés, algorithme de décodage utilisé, ...) et de réduire ce problème à l'aide d'outil d'apprentissage machine (SVM, DNN) qui sont très performants dans ce type de traitement. Il peut y avoir des applications directes, comme dans [reinforcement] où l'apprentissage par renforcement permet des gains substantiels en termes de performances de décodage. Il peut également y avoir des approches plus complexes, et en particulier un aller retour entre les experts qui proposent un code, et la réponse du système d'apprentissage qui proposera peut être des axes d'améliorations inattendus. Des allers-retours entre l'humain et la machine pourraient alors mener vers la définition de nouvelles familles de codes correcteurs d'erreurs.
+
+%TODO : je tourne en rond.
+Mes travaux antérieurs seront un tremplin parfait pour effectuer cette recherche. En effet le but du projet AFF3CT est la simulation très haut débit de l'ensemble des différents codes correcteurs d'erreurs, et ce de manière très générique et flexible vis-à-vis des paramètres d'entrée. Cette généricité permettra, dans le cadre de recherche représenté en figure 2, d'explorer toutes les dimensions du problèmes. En continuant sur l'exemple des codes polaires, il est par exemple possible, à l'aide d'un même code compilé, d'explorer tout couple (N,K), tout vecteur de bit gelés, tout motif de poinçonnage, et la majeure partie des algorithmes de décodage existant. Pour chaque algorithme de décodage, il est également possible de modifier des paramètres internes. Par exemple pour le décodage SCL (Successive Cancellation List), la profondeur de la liste, l'élagage de l'arbre de décodage, la quantification des données, le polynome d'un éventuel CRC concaténé, etc...
+
+
+\printbibliography[resetnumbers=true,keyword={projet_recherche}]
+
+\vspace{2em}
+\subsection{Perspectives de collaborations internationales}
+Il est attendu du candidat de pouvoir justifier d'une expérience à l'étranger.
+J'ai effectué mon doctorat en cotutelle entre l'Université de Bordeaux, en France, et l'\'Ecole Polytechnique de Montréal, au Canada.
+J'ai également collaboré avec des chercheurs de l'Université de Tampere pour une de mes contributions.
+Dans cette section, je donne quelques perspectives de collaborations internationales.
+
+\subsubsection{\'Ecole Polytechnique de Montréal, Canada}
+Ayant travaillé pendant 18 mois à Polytechnique Montréal, j'ai eu l'occasion de créer de nombreux liens avec des professeurs et étudiants. Parmi eux, le Pr. Yvon Savaria fut mon directeur de thèse. Sa lettre de recommandation (section \ref{subsec:yvon}) est jointe. Notre collaboration ayant été agréable et fructueuse par le passé, nous souhaitons continuer à travailler ensemble dans le futur. Yvon Savaria travaille depuis de nombreuses années sur des thématiques du domaine de l'électronique. Les interactions possibles sont nombreuses : thèses en cotutelles, financement de projet par des industriels partenaires, stages ingénieur, master.
+Le Pr. Pierre Langlois est coauteur d'un de mes articles sur une implémentation ASIP \cite{Leonardon2018a}. Il s'intéresse en effet beaucoup à ce type d'architecture, que ce soit en enseignement ou en recherche. Nous conservons de bons rapports et cette thématique d'implémentation ASIP pourrait être un point de rencontre.
+
+\subsubsection{Université McGill, Canada}
+L'équipe du Pr. Warren Gross est un contributeur majeur du domaine des codes correcteurs d'erreur. J'ai des contacts très réguliers avec le Dr. Thibaud Tonnellier qui, comme moi, a effectué sa thèse au sein du laboratoire IMS. Nous sommes tous deux coauteurs d'un article sur le logiciel AFF3CT et d'un autre en cours de soumission. Encore une fois, il sera possible de créer des partenariats sous la forme d'échanges d'étudiants ou bien de thèse en cotutelle.
+
+\subsubsection{Université de Tampere, Finlande}
+Mes travaux sur le décodeur de code polaires d'architecture TTA m'a amené à collaborer avec Pekka Jääskeläinen de l'Université de Tampere. Coauteur de l'un de mes articles, nous avons pour ambition de continuer à travailler ensemble. Le paradigme TTA me paraît en effet prometteur et les outils développés dans le projet TCE sont pertinents. Ces outils pourraient être utilisés pour des implémentations matérielles de décodeurs de codes correcteurs d'erreurs ou d'autres fonctionnalités d'une chaîne de communication. 
+
 \subsection{Projet d'intégration en enseignement}\vspace{2em}
 \subsubsection{Contexte}
 Le contexte des activités d'enseignement à l'IMT Atlantique est particulier puisque, suite à la récente fusion, l'ensemble du contenu de formation est revu. Désormais, les étudiants de première année suivront des formations de tronc commun dont le rôle est de bâtir un socle commun. Ce tronc commun sert également à présenter aux élèves les Thématiques d'ApproFondissement (TAF). Chaque étudiant doit choisir une TAF pour chacune des deuxième et troisième années. La TAF est constituée de plusieurs Unités d'Enseignement (UE). 3 soit obligatoires (UE c\oe{}urs). 6 sont choisies par les étudiants parmi une liste propre à la TAF (UE électives). L'équipe pédagogique d'une TAF propose un certain nombre d'UE électives (4 dans le cas de la TAF SEH). Les UE restantes de la liste d'UE électives sont celles d'autres TAF. Les 3 dernières UE peuvent être choisies par l'étudiant parmi n'importe quelle UE proposée par l'IMT Atlantique.
@@ -59,39 +134,3 @@ La TAF CoOC est une thématique d'approfondissement transdisciplinaire. L'étudian
 
 Un projet "fil rouge" sera également proposé durant l'année aux élèves. Je pourrais également assurer le suivi de projets.
 
-
-
-\newpage
-\subsection{Projet d'intégration en recherche}\vspace{2em}
-
-Les thèmes que j'ai abordés au cours de ma thèse, et présentés en section \ref{subsec:rech}, sont très proches de celles des membres du département électronique de l'IMT Atlantique. En effet, depuis les travaux du Pr. Claude Berrou et l'invention des Turbocodes, les codes correcteurs d'erreurs, les algorithmes de décodage et les architectures les implémentant constituent le c\oe{}ur des articles scientifiques, brevets et projets proposés. Ma thèse porte sur des implémentations logicielles et matérielles d'algorithmes de décodage de codes polaires, une nouvelle famille de codes correcteurs d'erreurs. Le lien est donc évident. Dans la suite de cette section, je dresse quelques propositions de collaborations futures.
-
-% Ajouter des citations
-\subsubsection{Méthodologies ASIP}
-De nombreux travaux des membres du département électronique portent sur la conception de processeurs suivant des méthodologies ASIP. L'intérêt de ce type d'architectures est qu'elles constituent des compromis pertinents entre la flexibilité de processeurs programmables et l'efficacité d'architectures matérielles dédiées. Ces processeurs ASIP peuvent être utilisés pour implémenter des décodeurs de codes correcteurs d'erreurs, comme c'est le cas dans mes travaux de thèse, ou dans les différents travaux du Pr. Amer Baghdadi sur ce sujet.
-
-\subsubsection{Codes Polaires}
-En tant que nouveaux venus dans la famille des codes correcteurs d'erreurs, les codes polaires suscitent l'intérêt de toute la communauté. Sélectionnés pour être intégrée dans le futur standard 5G, ils sont le sujet de nombreux travaux. Mes travaux de thèse m'on procuré une expertise certaine sur cette famille de codes correcteurs d'erreurs. Mes contributions principales portent sur des implémentations des algorithmes de décodage. Aussi, je possède une connaissance fine de la grande variété d'algorithmes disponibles. J'aimerais proposer dans le futur de nouvelles variantes des algorithmes de décodage en adéquation avec des architectures matérielles de processeurs généralistes ou spécialisés. Je m'intéresse également à la construction des codes polaires et à son évolution : définition de méthodes de poinçonnage, méthodes de définition des bits gelés, codes multinoyaux, codes polaires convolutifs. Enfin, dans les premiers mois de ma thèse, j'ai également exploré les algorithmes de décodage de codes polaires à sortie souples (SCAN, BP) en vue de les intégrer dans des schémas de décodage itératifs. Cet axe de recherche pourrait être développé avec l'aide de certains membres de l'équipe qui disposent de compétences dans le domaines des processus itératifs.
-Du coté du département électronique l'IMT Atlantique, les codes polaires sont également à l'étude et considéré comme un sujet d'avenir, comme en atteste par exemple une thèse en cours sur l'implémentation matérielle de l'algorithme de décodage à liste. 
-
-\subsubsection{Simulation}
-Comme montré dans la section \ref{subsec:rech}, une grande partie de mes travaux a porté sur des implémentations logicielles d'algorithmes de décodage et sur la mise en \oe{}uvre de simulations à très hauts débits. Or, ces simulations sont capitales dans les travaux de recherche des chercheurs. Simuler un canal de communication complexe ou bien évaluer des taux d'erreur trames très bas constituent des tâches d'une complexité calculatoire extrême. Il s'agit alors d'un défi à relever pour mener à bien des campagnes expérimentales.
-
-\subsubsection{Démonstrateur}
-Dans le cadre du projet Fantastic 5G, un démonstrateur a été réalisé par l'équipe du département électronique de l'IMT Atlantique. De tels démonstrateurs sont nécessaires pour valider les découvertes théoriques. Ils sont également un excellent vecteur de communication avec les membres de la communauté. Dans le domaine des communications numériques, la conception de démonstrateurs de ce type est désormais facilité par l'existence de modules de radio logicielle. La mise en \oe{}uvre de systèmes basés sur de la radio logicielle est une activité qui me semble pertinente.
-\vspace{2em}
-\subsection{Perspectives de collaborations internationales}
-Il est attendu du candidat de pouvoir justifier d'une expérience à l'étranger.
-J'ai effectué mon doctorat en cotutelle entre l'Université de Bordeaux, en France, et l'\'Ecole Polytechnique de Montréal, au Canada.
-J'ai également collaboré avec des chercheurs de l'Université de Tampere pour une de mes contributions.
-Dans cette section, je donne quelques perspectives de collaborations internationales.
-
-\subsubsection{\'Ecole Polytechnique de Montréal, Canada}
-Ayant travaillé pendant 18 mois à Polytechnique Montréal, j'ai eu l'occasion de créer de nombreux liens avec des professeurs et étudiants. Parmi eux, le Pr. Yvon Savaria fut mon directeur de thèse. Sa lettre de recommandation (section \ref{subsec:yvon}) est jointe. Notre collaboration ayant été agréable et fructueuse par le passé, nous souhaitons continuer à travailler ensemble dans le futur. Yvon Savaria travaille depuis de nombreuses années sur des thématiques du domaine de l'électronique. Les interactions possibles sont nombreuses : thèses en cotutelles, financement de projet par des industriels partenaires, stages ingénieur, master.
-Le Pr. Pierre Langlois est coauteur d'un de mes articles sur une implémentation ASIP \cite{Leonardon2018a}. Il s'intéresse en effet beaucoup à ce type d'architecture, que ce soit en enseignement ou en recherche. Nous conservons de bons rapports et cette thématique d'implémentation ASIP pourrait être un point de rencontre.
-
-\subsubsection{Université McGill, Canada}
-L'équipe du Pr. Warren Gross est un contributeur majeur du domaine des codes correcteurs d'erreur. J'ai des contacts très réguliers avec le Dr. Thibaud Tonnellier qui, comme moi, a effectué sa thèse au sein du laboratoire IMS. Nous sommes tous deux coauteurs d'un article sur le logiciel AFF3CT et d'un autre en cours de soumission. Encore une fois, il sera possible de créer des partenariats sous la forme d'échanges d'étudiants ou bien de thèse en cotutelle.
-
-\subsubsection{Université de Tampere, Finlande}
-Mes travaux sur le décodeur de code polaires d'architecture TTA m'a amené à collaborer avec Pekka Jääskeläinen de l'Université de Tampere. Coauteur de l'un de mes articles, nous avons pour ambition de continuer à travailler ensemble. Le paradigme TTA me paraît en effet prometteur et les outils développés dans le projet TCE sont pertinents. Ces outils pourraient être utilisés pour des implémentations matérielles de décodeurs de codes correcteurs d'erreurs ou d'autres fonctionnalités d'une chaîne de communication. 

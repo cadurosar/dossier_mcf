@@ -20,9 +20,8 @@ Enfin un dernier thème de recherche est proposé dans une dernière partie. Celui-
 
 \subsubsection{Architectures hétérogènes}
 \label{subsubsec:archis_heterogenes}
-Aujourd'hui, les phases d'apprentissage des systèmes d'intelligence artificielles sont réalisées à l'aide d'unités de calculs graphiques (GPU : Graphical Processing Units). L'inconvénient des GPU est leur forte consommation énergétique. Cette consommation pose deux problèmes : celui des coûts financiers et celui de l'impact écologique []. Des alternatives sont d'ores et déjà proposées, avec par exemple le développement de puces TPU (Tensor Processing Unit) développées par l'entreprise Google, qui permettent un apprentissage plus rapide et une consommation réduite []. Le troisième type de cibles envisagées est le FPGA (Field Programmable Gate Array), dont le principal avantage est qu'il peut être reconfiguré pour s'adapter finement à l'algorithme que l'on souhaite lui faire exécuter. Ces améliorations fines peuvent permettre des réductions de consommation énergétique [].
-%TODO : introduire habilement les Xeon + FPGA
-La problématique est alors de transformer la description formelle d'un algorithme d'apprentissage en un programme s'exécutant sur le processeur et à l'architecture spécialisée synthétisée pour le FPGA. Pour réaliser ceci, la première nécessité est de former des ingénieurs pour qu'ils connaissent et sachent utiliser ces plate-formes hétérogènes. Ce sujet est au c\oe{}ur de la TAF SEH (Systèmes Embarqués Hétérogènes). Ensuite, des outils logiciels peuvent faciliter ce développement : 
+Aujourd'hui, les phases d'apprentissage des systèmes d'intelligence artificielles sont réalisées à l'aide d'unités de calculs graphiques (GPU : Graphical Processing Units). L'inconvénient des GPU est leur forte consommation énergétique. Cette consommation pose deux problèmes : celui des coûts financiers et celui de l'impact écologique []. Des alternatives sont d'ores et déjà proposées, avec par exemple le développement de puces TPU (Tensor Processing Unit) développées par l'entreprise Google, qui permettent un apprentissage plus rapide et une consommation réduite []. Le troisième type de cibles envisagées est le FPGA (Field Programmable Gate Array), dont le principal avantage est qu'il peut être reconfiguré pour s'adapter finement à l'algorithme que l'on souhaite lui faire exécuter. Cette spécialisation peut permettre des réductions importantes de consommation énergétique \cite{7505926}. Ces caractéristiques mènent à la tendance actuelle de généralisation de la présence des FPGA dans les centre de données. Cependant, pour rendre cette technologie accessible est utilisée efficacement, il est nécessaire de créer des outils logiciels adéquats :
+
 \begin{itemize}
 	\item Bibliothèques logicielles pour calcul parallèle (C++ STL[], SyCL[])
 	\item Langages et compilateurs pour cibles parallèles (OpenCL[], TCE[])
@@ -34,6 +33,9 @@ Le développement de ces outils et leur applications sur les futurs algorithmes d
 \subsubsection{ASIP pour l'IA}
 \label{subsubsec:asip_ia}
 
+La mise en \oe{}uvre de l'intelligence artificielle dans les produits industriels pose un problème de confidentialité des données. De plus, pour atteindre des performances satisfaisantes, du point de vue du temps d'exécution ou de l'efficacité énergétique, il sera nécessaire d'utiliser des accélérateurs matériels. Ces accélérateurs peuvent prendre par exemple la forme de processeurs spécialisés (Application Specific Instruction set Processors). Ceux-ci permettent d'atteindre des performances supérieures aux processeurs généralistes tout en conservant un haut degré de flexibilité. Cette flexibilité peut s'avérer nécessaire pour certaines optimisations lors de l'inférence des réseaux de neurones convolutionnels [].
+
+Les architectures TTA sont un modèle de processeurs spécialisés. Ils bénéficient d'un environnement de conception nommé TCE qui facilite leur conception. Le modèle de processeur, configuré par le concepteur, est fourni en langage VHDL générique. Cela permet d'avoir le contrôle complet de l'architecture matérielle. Il n'y a donc pas de dépendance vis-à-vis d'un composant matériel soumis à une propriété industrielle.
 
 
 \subsubsection{Algorithmes d'apprentissage pour la conception de codes correcteurs d'erreurs}
@@ -41,7 +43,8 @@ Le développement de ces outils et leur applications sur les futurs algorithmes d
 
 L'art de de la construction des codes correcteurs d'erreurs est un domaine de recherche actif depuis la proposition de la théorie de l'information de CLaude Shannon. Diverses familles ont été proposées, de plus en plus complexes. Sur le plan conceptuel, les outils mathématiques et d'analyse sont de plus en plus raffinés. Sur le plan calculatoire, les traitements à réaliser au niveau du décodage sont de plus en plus lourds. Cette complexité du décodage a suivi la croissance exponentielle de la puissance de calcul des circuits électroniques (loi de Moore).
 
-Aujourd'hui, la conception de ces codes correcteurs d'erreurs et des algorithmes de décodage qui leur sont associés est toujours le fruit du travail d'une communauté d'experts. Ils utilisent pour cela des outils mathématiques théoriques couplés à des expérimentations empiriques. Selon Alan Turing, les problèmes d'une telle complexité ne pourront, à terme, n'être résolu que par des machines (%TODO : affiner la pensée, citer []). Il est possible d'appréhender ce défi avec beaucoup d'angles différents. Voilà celui qui me parait le plus prometteur en l'état actuel des choses. Il correspond l'extension de l'idée présentée dans [AI Coding]. Ce principe est schématisé dans la figure BLAH.
+Aujourd'hui, la conception de ces codes correcteurs d'erreurs et des algorithmes de décodage qui leur sont associés est toujours le fruit du travail d'une communauté d'experts. Ils utilisent pour cela des outils mathématiques théoriques couplés à des expérimentations empiriques. Selon Alan Turing, les problèmes d'une telle complexité ne pourront, à terme, n'être résolu que par des machines (%TODO : affiner la pensée, citer []).
+Il est possible d'appréhender ce défi avec beaucoup d'angles différents. Voilà celui qui me parait le plus prometteur en l'état actuel des choses. Il correspond l'extension de l'idée présentée dans [AI Coding]. Ce principe est schématisé dans la figure BLAH.
 
 Fig.II. / AI coding
 
@@ -55,7 +58,8 @@ Ce type d'approche me parait très prometteur. Il s'agit en effet de prendre un p
 %TODO : je tourne en rond.
 Mes travaux antérieurs seront un tremplin parfait pour effectuer cette recherche. En effet le but du projet AFF3CT est la simulation très haut débit de l'ensemble des différents codes correcteurs d'erreurs, et ce de manière très générique et flexible vis-à-vis des paramètres d'entrée. Cette généricité permettra, dans le cadre de recherche représenté en figure 2, d'explorer toutes les dimensions du problèmes. En continuant sur l'exemple des codes polaires, il est par exemple possible, à l'aide d'un même code compilé, d'explorer tout couple (N,K), tout vecteur de bit gelés, tout motif de poinçonnage, et la majeure partie des algorithmes de décodage existant. Pour chaque algorithme de décodage, il est également possible de modifier des paramètres internes. Par exemple pour le décodage SCL (Successive Cancellation List), la profondeur de la liste, l'élagage de l'arbre de décodage, la quantification des données, le polynome d'un éventuel CRC concaténé, etc...
 
-
+\renewcommand{\refname}{Références}
+\newrefcontext
 \printbibliography[resetnumbers=true,keyword={projet_recherche}]
 
 \vspace{2em}
@@ -133,4 +137,3 @@ Les étudiants devront mettre en \oe{}uvre ces techniques au cours d'un projet.
 La TAF CoOC est une thématique d'approfondissement transdisciplinaire. L'étudiant devra développer des compétences techniques de conception, de gestion de projet et également aborder des problématiques éthiques en lien avec les données personnelles et de santé. Une UE c\oe{}ur est nommée "Conception Centrée Utilisateur". J'ai une expérience dans le développement d'IHM et le maquettage. Au sein de l'entreprise WorldCast Systems, où j'ai mené à bien le développement d'une IHM, de l'analyse fonctionnelle jusqu'à la programmation (lien vers le mémoire : \url{https://bit.ly/2V7fUtN}).
 
 Un projet "fil rouge" sera également proposé durant l'année aux élèves. Je pourrais également assurer le suivi de projets.
-
